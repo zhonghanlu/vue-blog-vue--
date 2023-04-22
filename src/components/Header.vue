@@ -8,11 +8,11 @@
       <div>{{ user.username }}</div>
       <div class="maction">
         <span>
-          <el-link>主页</el-link>
+          <el-link @click="blogs">主页</el-link>
         </span>
         <el-divider direction="vertical"></el-divider>
         <span>
-          <el-link type="success">发表博客</el-link>
+          <el-link type="success" @click="add">发表博客</el-link>
         </span>
 
         <el-divider direction="vertical"></el-divider>
@@ -55,6 +55,12 @@ export default {
     },
     login() {
       this.$router.push("/login")
+    },
+    add() {
+      this.$router.push("/blog/add")
+    },
+    blogs() {
+      this.$router.push("/blogs", () => {})
     }
   },
   created() {

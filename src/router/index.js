@@ -28,17 +28,23 @@ const routes = [
     {
         path: '/blog/add',
         name: 'BlogAdd',
-        component: BlogEdit
+        component: BlogEdit,
+        meta: {
+            requireAuth: true
+        }
     },
     {
-        path: '/blog/:blogId',
+        path: '/blog/:blogid',
         name: 'BlogDetail',
         component: BlogDetail
     },
     {
-        path: '/blog/:blogId/edit',
+        path: '/blog/:blogid/edit',
         name: 'BlogEdit',
-        component: BlogEdit
+        component: BlogEdit,
+        meta: {
+            requireAuth: true
+        }
     }
 ]
 
